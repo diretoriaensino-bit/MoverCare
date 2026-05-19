@@ -10,7 +10,6 @@ import {
   completeTransport,
   startTransport
 } from "../actions";
-import TransportChatPanel from "@/components/transports/transport-chat-panel";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -796,14 +795,7 @@ export default async function TransportDetailsPage({
             />
           </div>
         </section>
-
-        <TransportChatPanel
-          transportId={transport.id}
-          hospitalId={profile.hospital_id}
-          currentProfileId={profile.id}
-        />
-
-        <div className="grid gap-6 xl:grid-cols-3">
+<div className="grid gap-6 xl:grid-cols-3">
           <section className="space-y-6 xl:col-span-2">
             <SectionCard title="Dados do transporte">
               <div className="grid gap-4 md:grid-cols-2">
@@ -1291,5 +1283,6 @@ export default async function TransportDetailsPage({
     </DashboardShell>
   );
 }
+
 
 
