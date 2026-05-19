@@ -37,6 +37,7 @@ type ProfileRelation = {
 
 type TransportDetails = {
   id: string;
+  hospital_id: string;
   patient_code: string;
   bed_number: string | null;
   priority: string;
@@ -1290,3 +1291,4 @@ export default async function TransportDetailsPage({
     </DashboardShell>
   );
 }
+
