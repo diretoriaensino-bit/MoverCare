@@ -799,7 +799,7 @@ export default async function TransportDetailsPage({
 
         <TransportChatPanel
           transportId={transport.id}
-          hospitalId={transport.hospital_id}
+          hospitalId={profile.hospital_id}
           currentProfileId={profile.id}
         />
 
@@ -1291,4 +1291,5 @@ export default async function TransportDetailsPage({
     </DashboardShell>
   );
 }
+
 
