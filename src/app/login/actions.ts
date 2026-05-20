@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { revalidatePath } from "next/cache";
 
 type WebAccessStatus = {
   allowed: boolean;
@@ -87,5 +88,6 @@ export async function loginAction(formData: FormData) {
     );
   }
 
-  redirect(getRedirectPathByRole(profile.role));
+  revalidatePath("/", "layout");
+redirect(getRedirectPathByRole(profile.role));
 }

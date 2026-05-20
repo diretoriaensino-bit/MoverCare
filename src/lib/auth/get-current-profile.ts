@@ -9,9 +9,8 @@ export async function getCurrentProfile() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/login");
-  }
-
+  redirect("/login?error=Sessão expirada ou cookie não encontrado. Faça login novamente.");
+}
   const { data: profile, error } = await supabase
     .from("profiles")
     .select("id, hospital_id, name, email, role, active")
